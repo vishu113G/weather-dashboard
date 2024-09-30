@@ -1,0 +1,22 @@
+# Virtual Environment
+venv/
+.env
+
+# Byte-compiled files
+__pycache__/
+*.pyc
+
+# Logs
+*.log
+
+# IDE specific files
+.idea/
+.vscode/
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Python egg files
+*.egg
+*.egg-info/
