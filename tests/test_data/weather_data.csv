@@ -1,0 +1,49 @@
+event_time,metric_value,category,description
+2024-09-01 08:00:00,20.1,Temperature,Cool morning
+2024-09-01 09:00:00,21.3,Temperature,Partly cloudy
+2024-09-01 10:00:00,22.5,Temperature,Clear sky
+2024-09-01 11:00:00,23.8,Temperature,Sunny
+2024-09-01 12:00:00,25.0,Temperature,Warming up
+2024-09-01 13:00:00,26.3,Temperature,Sunny
+2024-09-01 14:00:00,27.5,Temperature,Hot afternoon
+2024-09-01 15:00:00,28.1,Temperature,Clear sky
+2024-09-01 16:00:00,28.8,Temperature,Sunny and hot
+2024-09-01 17:00:00,27.9,Temperature,Cool breeze
+2024-09-01 18:00:00,26.5,Temperature,Partly cloudy
+2024-09-01 19:00:00,24.8,Temperature,Cooling down
+2024-09-01 20:00:00,23.1,Temperature,Clear sky
+2024-09-01 21:00:00,21.7,Temperature,Cool night
+2024-09-01 22:00:00,20.9,Temperature,Clear and calm
+2024-09-01 23:00:00,20.2,Temperature,Clear and chilly
+2024-09-02 00:00:00,19.5,Temperature,Calm night
+2024-09-02 01:00:00,19.1,Temperature,Cool and calm
+2024-09-02 02:00:00,18.8,Temperature,Clear night
+2024-09-02 03:00:00,18.4,Temperature,Chilly
+2024-09-02 04:00:00,18.0,Temperature,Clear and cool
+2024-09-02 05:00:00,17.6,Temperature,Chilly early morning
+2024-09-02 06:00:00,17.8,Temperature,Slightly warmer
+2024-09-02 07:00:00,18.9,Temperature,Sunrise
+2024-09-02 08:00:00,20.2,Temperature,Cool morning
+2024-09-02 09:00:00,21.7,Temperature,Partly cloudy
+2024-09-02 10:00:00,23.0,Temperature,Clear sky
+2024-09-02 11:00:00,24.3,Temperature,Sunny
+2024-09-02 12:00:00,25.5,Temperature,Warming up
+2024-09-02 13:00:00,26.8,Temperature,Sunny
+2024-09-02 14:00:00,28.0,Temperature,Hot afternoon
+2024-09-02 15:00:00,28.9,Temperature,Clear sky
+2024-09-02 16:00:00,29.4,Temperature,Sunny and hot
+2024-09-02 17:00:00,28.7,Temperature,Cool breeze
+2024-09-02 18:00:00,27.1,Temperature,Partly cloudy
+2024-09-02 19:00:00,25.6,Temperature,Cooling down
+2024-09-02 20:00:00,24.0,Temperature,Clear sky
+2024-09-02 21:00:00,22.3,Temperature,Cool night
+2024-09-02 22:00:00,21.4,Temperature,Clear and calm
+2024-09-02 23:00:00,20.7,Temperature,Clear and chilly
+2024-09-03 00:00:00,19.9,Temperature,Calm night
+2024-09-03 01:00:00,19.2,Temperature,Cool and calm
+2024-09-03 02:00:00,18.7,Temperature,Clear night
+2024-09-03 03:00:00,18.4,Temperature,Chilly
+2024-09-03 04:00:00,18.1,Temperature,Clear and cool
+2024-09-03 05:00:00,17.9,Temperature,Chilly early morning
+2024-09-03 06:00:00,18.1,Temperature,Slightly warmer
+2024-09-03 07:00:00,19.2,Temperature,Sunrise
