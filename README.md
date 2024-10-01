@@ -51,7 +51,9 @@ Python 3.7 or higher.
 ## Running the Tests
 
 ### Start the Kubernetes cluster (if not already running): `minikube start`
-### Run the tests: `pytest`
+### Run the tests: 
+activate venv - `.\venv\Scripts\activate`
+run the tests `pytest`
 ### View Test Reports: 
 * After the tests complete, check the generated reports using the link shown in the shell or in the reports directory. 
 * You can also specify the report path in your pytest configuration.
