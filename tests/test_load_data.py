@@ -3,7 +3,7 @@ import os
 
 import mariadb
 import pytest
-from utils.db_utils import create_db_connection, close_db_connection
+from utils.db_utils import create_db_connection, close_db_connection, insert_data_from_csv, create_table_in_database, fetch_rows_count
 
 
 @pytest.fixture
@@ -24,51 +24,9 @@ def create_table_timeseries(create_database_connection):
     Cleans up existing data before each test.
     """
     conn = create_database_connection
-    with conn.cursor() as cur:
-        cur.execute(''' 
-            CREATE TABLE IF NOT EXISTS timeseries_data (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                event_time DATETIME NOT NULL,
-                metric_value FLOAT NOT NULL,
-                category VARCHAR(50),
-                description TEXT
-            );
-        ''')
-        # Clean up existing data
-        cur.execute('DELETE FROM timeseries_data;')
+    cur = conn.cursor()
+    create_table_in_database(cur)
     yield conn
-
-
-def insert_data_from_csv(cur, csv_file_path: str) -> int:
-    """
-    Inserts data from a CSV file into the database.
-
-    Args:
-        cur (mariadb.Cursor): The cursor object to execute queries.
-        csv_file_path (str): The path to the CSV file.
-
-    Returns:
-        int: The number of rows inserted.
-    """
-    csv_row_count = 0  # Counter for number of rows in the file
-
-    try:
-        with open(csv_file_path, mode='r') as csvfile:
-            reader = csv.reader(csvfile)
-            next(reader)  # Skip the header row
-
-            for row in reader:
-                cur.execute(
-                    "INSERT INTO timeseries_data (event_time, metric_value, category, description) VALUES (?, ?, ?, ?)",
-                    row
-                )
-                csv_row_count += 1
-    except FileNotFoundError:
-        pytest.fail(f"CSV file not found: {csv_file_path}")
-    except Exception as e:
-        pytest.fail(f"Error reading CSV file {csv_file_path}: {e}")
-
-    return csv_row_count
 
 
 def test_load_data(create_table_timeseries):
@@ -93,8 +51,7 @@ def test_load_data(create_table_timeseries):
             conn.commit()
 
             # Get number of records from the DB
-            cur.execute("SELECT COUNT(*) FROM timeseries_data")
-            db_row_count = cur.fetchone()[0]  # Fetch the first element, which is the row count
+            db_row_count = fetch_rows_count(cur)
 
         # Assert records are the same as present in the file
         assert csv_row_count == db_row_count, (

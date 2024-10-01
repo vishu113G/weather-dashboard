@@ -6,8 +6,15 @@ from utils.common_utils import *
 from utils.config import *
 
 
-def test_grafana_dashboard_e2e(page, login_and_navigate_to_data_source: DataSourcePage):
-    """Test to configure a data source and validate the dashboard build process."""
+def test_grafana_dashboard_e2e(page, login_and_navigate_to_data_source: DataSourcePage, load_data_in_db: int):
+    """Test to load data in a table, configure a data source and validate the dashboard build process."""
+
+    csv_row_count, db_row_count = load_data_in_db
+    # Assert records in the DB are the same as present in the file used for loading data
+    assert csv_row_count == db_row_count, (
+        f"Row count mismatch: CSV has {csv_row_count} rows, but DB has {db_row_count} records."
+    )
+
     datasource_page = login_and_navigate_to_data_source
 
     # Add a new data source

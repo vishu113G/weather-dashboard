@@ -13,7 +13,16 @@ MYSQL_DATABASE = 'my_dashboard'
 MYSQL_USERNAME = 'root'
 MYSQL_PASSWORD = 'root_password'
 
-DEFAULT_QUERY = '''SELECT event_time, metric_value 
+CREATE_QUERY = ''' 
+            CREATE TABLE IF NOT EXISTS timeseries_data (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                event_time DATETIME NOT NULL,
+                metric_value FLOAT NOT NULL,
+                category VARCHAR(50),
+                description TEXT
+            );'''
+
+DEFAULT_DASHBOARD_QUERY = '''SELECT event_time, metric_value 
                     FROM timeseries_data 
                     WHERE category = 'Temperature' 
                     ORDER BY event_time;'''

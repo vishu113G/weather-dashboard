@@ -2,7 +2,7 @@ import logging
 import time
 
 from pages.base_page import BasePage
-from utils.config import DEFAULT_QUERY, DEFAULT_TIME_RANGE_FROM, DEFAULT_TIME_RANGE_TO
+from utils.config import DEFAULT_DASHBOARD_QUERY, DEFAULT_TIME_RANGE_FROM, DEFAULT_TIME_RANGE_TO
 
 
 class DashboardPage(BasePage):
@@ -59,7 +59,7 @@ class DashboardPage(BasePage):
     #     self.page.keyboard.insert_text(query)
     #     self.click(self.run_query_button)
 
-    def add_query(self, query=DEFAULT_QUERY):
+    def add_query(self, query=DEFAULT_DASHBOARD_QUERY):
         """
         Adds the SQL query to the dashboard's query input.
 

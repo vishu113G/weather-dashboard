@@ -1,3 +1,5 @@
+import logging
+
 from playwright.sync_api import expect
 
 from pages.base_page import BasePage
@@ -40,7 +42,7 @@ class DataSourceMySqlPage(BasePage):
 
             # Wait for success or error toast
             if self.page.locator(self.connection_success_toast).is_visible():
-                print(f"Data source '{DATA_SOURCE_NAME}' configured successfully.")
+                logging.info(f"Data source '{DATA_SOURCE_NAME}' configured successfully.")
             elif self.page.locator(self.connection_error_toast).is_visible():
                 error_message = self.page.locator(self.connection_error_toast).inner_text()
                 raise RuntimeError(f"Failed to configure data source: {error_message}")
