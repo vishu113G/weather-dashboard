@@ -6,7 +6,7 @@ from utils.common_utils import *
 from utils.config import *
 
 
-def test_configure_data_source(page, login_and_navigate_to_data_source: DataSourcePage):
+def test_grafana_dashboard_e2e(page, login_and_navigate_to_data_source: DataSourcePage):
     """Test to configure a data source and validate the dashboard build process."""
     datasource_page = login_and_navigate_to_data_source
 
